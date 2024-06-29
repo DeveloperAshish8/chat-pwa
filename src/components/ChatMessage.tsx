@@ -21,12 +21,23 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         message.sender.self ? "ml-auto justify-end" : ""
       } flex w-full mt-2 space-x-2 `}
     >
-      <div className={` ${message.sender.self ? "hidden" : "flex  mb-2"} `}>
+      <div
+        className={` ${message.sender.self ? "hidden" : "flex  mb-2"} relative`}
+      >
         <img
           src={message.sender.image}
           alt="User Avatar"
           className="flex-shrink-0 min-h-7  min-w-7 max-h-7 max-w-7 rounded-full"
         />
+        {message.sender.is_kyc_verified ? (
+          <img
+            src="/assets/verified.svg"
+            alt="icon"
+            className="absolute top-5 -right-1 text-xs w-2"
+          />
+        ) : (
+          ""
+        )}
       </div>
 
       <div

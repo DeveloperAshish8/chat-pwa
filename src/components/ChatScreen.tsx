@@ -29,10 +29,10 @@ const ChatScreen = () => {
 
       if (data && Array.isArray(data.chats)) {
         setMessages((prev) => {
-          const combinedMessages = [...prev, ...data.chats];
-          return combinedMessages.sort(
-            (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
+          const combinedMessages = Array.from(
+            new Set([...prev, ...data.chats])
           );
+          return combinedMessages;
         });
       } else {
         console.error("Fetched data does not contain chats array", data);
@@ -45,23 +45,16 @@ const ChatScreen = () => {
   }, []);
   //data fetching ends
 
-  //hiting API after every 5 seconds
   useEffect(() => {
     fetchMessages();
+  }, [page, fetchingMessages]);
 
-    const intervalId = setInterval(() => {
-      if (!fetchingMessages) {
-        fetchMessages();
-      }
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [fetchMessages, fetchingMessages]);
-
-  //page switching when scrolled
+  // page switching when scrolled
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    if (e.currentTarget.scrollTop === 0) {
+    console.log("Scrolling");
+    if (e.currentTarget.scrollTop < 50) {
       setPage((prev) => prev + 1);
+      console.log(page);
     }
   };
 

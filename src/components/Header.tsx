@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Header = () => {
   const [menuOpened, setmenuOpened] = useState(false);
   return (
-    <div className=" pt-8 pb-3 px-3 flex flex-col gap-4 fixed bg-[#FAF9F4]  border-b-[#E5E5E0] border-[1px] w-full max-w-xl">
+    <div className=" pt-8 pb-3 px-3 flex flex-col gap-4 z-50 fixed bg-[#FAF9F4]  border-b-[#E5E5E0] border-[1px] w-full max-w-xl">
       <div className="flex justify-between items-center">
         <div className="flex gap-5 items-center">
           <img src="/assets/leftArrow.svg" alt="icon" />
@@ -59,9 +59,7 @@ const Header = () => {
               </li>
               <li className="flex gap-3 p-3 border-[#E5E5E0] border-[1px] w-40">
                 <img src="/assets/phone.svg" alt="icon" />
-                <a className=" transition hover:text-primary" href="/#about">
-                  Share Number
-                </a>
+                <a className=" transition hover:text-primary">Share Number</a>
               </li>
               <li className="flex gap-3 p-3 border-[#E5E5E0] border-[1px] w-40">
                 <img src="/assets/report.svg" alt="icon" />

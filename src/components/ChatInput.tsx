@@ -2,7 +2,7 @@ import React from "react";
 
 const ChatInput = () => {
   return (
-    <div className="py-3 px-4 relative w-[390px] h-16  box-border rounded">
+    <div className="py-3 px-4 relative w-full h-16  box-border rounded">
       <input
         className="w-[95%] px-3 py-4  rounded-lg text-xs bg-white"
         placeholder="Reply to @Rohit Yadav"
@@ -15,7 +15,7 @@ const ChatInput = () => {
 
           <span
             role="tooltip"
-            className="pointer-events-none absolute z-50 inline-flex items-center justify-center rounded-3xl p-3 font-semibold opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-[#008000] text-[white] min-h-7 text-sm left-1/2 -translate-x-1/2 after:absolute after:block after:size-0 after:border-8 after:border-transparent after:border-t-primary after:-bottom-[0.95rem] after:left-1/2 after:-translate-x-1/2 top-[-3rem]"
+            className=" pointer-events-none absolute z-50 inline-flex items-center justify-center rounded-3xl p-3 font-semibold opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-[#008000] text-[white] min-h-7 text-sm left-1/2 -translate-x-1/2 after:absolute after:block after:size-0 after:border-8 after:border-transparent after:border-t-[#008000] after:-bottom-[0.95rem] after:left-1/2 after:-translate-x-1/2 top-[-3rem]"
           >
             <div className="flex gap-3 w-20 mx-2 items-center">
               <img src="/assets/camera.svg" alt="camera" />
