@@ -32,7 +32,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
       <div
         className={`${
           message.sender.self
-            ? "bg-blue-600 text-white p-2 rounded-l-xl rounded-tr-lg w-[287px] shadow-3xl"
+            ? "bg-[#1C63D5] text-white p-2 rounded-l-xl rounded-tr-lg w-[287px] shadow-3xl"
             : "bg-white text-[#606060] text-[14px] p-2 rounded-r-lg rounded-bl-xl w-[287px] shadow-3xl"
         }`}
       >
