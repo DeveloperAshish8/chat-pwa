@@ -66,7 +66,7 @@ const ChatScreen = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col flex-grow w-full max-w-xl  rounded-lg overflow-hidden">
+    <div className="h-[98vh] flex flex-col flex-grow w-full max-w-xl  rounded-lg overflow-hidden">
       <div
         onScroll={handleScroll}
         className="flex flex-col-reverse flex-grow h-0 p-4 overflow-auto "
