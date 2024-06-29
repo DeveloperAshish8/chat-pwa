@@ -3,7 +3,7 @@
   "name": "Chat Progressive Web Application",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "logo512.png",
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "any maskable"
@@ -17,6 +17,11 @@
       "src": "logo256.png",
       "type": "image/png",
       "sizes": "256x256"
+    },
+    {
+      "src": "logo384.png",
+      "type": "image/png",
+      "sizes": "384x384"
     },
     {
       "src": "logo512.png",
