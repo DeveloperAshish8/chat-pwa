@@ -71,7 +71,7 @@ const ChatScreen = () => {
 
   return (
     <div className="h-[92vh] flex flex-col flex-grow w-full max-w-xl  rounded-lg overflow-hidden">
-      {/* <div
+      <div
         ref={messagesEndRef}
         onScroll={handleScroll}
         className="flex flex-col-reverse flex-grow h-0 p-4 overflow-auto "
@@ -83,7 +83,7 @@ const ChatScreen = () => {
           .map((msg) => (
             <ChatMessage key={msg.id} message={msg} />
           ))}
-      </div> */}
+      </div>
       <div className="mt-auto">
         <ChatInput />
       </div>
