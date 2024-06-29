@@ -10,17 +10,17 @@ const ChatInput = () => {
       <div className="absolute right-12 top-6 flex gap-3 items-center">
         <div className="group relative inline-block whitespace-nowrap">
           <span className="flex size-6 cursor-pointer items-center justify-center rounded-full  text-sm font-semibold text-[white]">
-            <img src="/media.svg" alt="icon" />
+            <img src="/assets/media.svg" alt="icon" />
           </span>
 
           <span
             role="tooltip"
             className="pointer-events-none absolute z-50 inline-flex items-center justify-center rounded-3xl p-3 font-semibold opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-[#008000] text-[white] min-h-7 text-sm left-1/2 -translate-x-1/2 after:absolute after:block after:size-0 after:border-8 after:border-transparent after:border-t-primary after:-bottom-[0.95rem] after:left-1/2 after:-translate-x-1/2 top-[-3rem]"
           >
-            <div className="flex gap-3 w-24 items-center">
-              <img src="/camera.svg" alt="camera" />
-              <img src="/video.svg" alt="video" />
-              <img src="/document.svg" alt="document" />
+            <div className="flex gap-3 w-20 mx-2 items-center">
+              <img src="/assets/camera.svg" alt="camera" />
+              <img src="/assets/video.svg" alt="video" />
+              <img src="/assets/document.svg" alt="document" />
             </div>
           </span>
         </div>

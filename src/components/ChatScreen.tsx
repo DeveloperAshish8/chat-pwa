@@ -17,8 +17,8 @@ const ChatScreen = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [fetchingMessages, setFetchingMessages] = useState(false);
   const [page, setPage] = useState(0);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  //data fetcing starts
   const fetchMessages = useCallback(async () => {
     try {
       setFetchingMessages(true);
@@ -43,7 +43,9 @@ const ChatScreen = () => {
       setFetchingMessages(false);
     }
   }, []);
+  //data fetching ends
 
+  //hiting API after every 5 seconds
   useEffect(() => {
     fetchMessages();
 
@@ -56,23 +58,16 @@ const ChatScreen = () => {
     return () => clearInterval(intervalId);
   }, [fetchMessages, fetchingMessages]);
 
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      //   messagesEndRef.current.style.scrollBehavior = "none";
-      //   messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
-    }
-  }, [messages]);
-
+  //page switching when scrolled
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    // if (e.currentTarget.scrollTop === 0) {
-    //   setPage((prev) => prev + 1);
-    // }
+    if (e.currentTarget.scrollTop === 0) {
+      setPage((prev) => prev + 1);
+    }
   };
 
   return (
-    <div className="h-[92vh] flex flex-col flex-grow w-full max-w-xl  rounded-lg overflow-hidden">
+    <div className="h-screen flex flex-col flex-grow w-full max-w-xl  rounded-lg overflow-hidden">
       <div
-        ref={messagesEndRef}
         onScroll={handleScroll}
         className="flex flex-col-reverse flex-grow h-0 p-4 overflow-auto "
         style={{ maxHeight: "calc(100vh - 4rem)" }}
