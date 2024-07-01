@@ -32,6 +32,8 @@ const ChatScreen = () => {
           const combinedMessages = Array.from(
             new Set([...prev, ...data.chats])
           );
+          console.log(combinedMessages);
+
           return combinedMessages;
         });
       } else {
@@ -47,12 +49,12 @@ const ChatScreen = () => {
 
   useEffect(() => {
     fetchMessages();
-  }, [page, fetchingMessages]);
+  }, [page]);
 
   // page switching when scrolled
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     console.log("Scrolling");
-    if (e.currentTarget.scrollTop < 50) {
+    if (e.currentTarget.scrollTop < 100) {
       setPage((prev) => prev + 1);
       console.log(page);
     }
@@ -65,12 +67,9 @@ const ChatScreen = () => {
         className="flex flex-col-reverse flex-grow h-0 p-4 overflow-auto "
         style={{ maxHeight: "calc(100vh - 4rem)" }}
       >
-        {messages
-          .slice()
-          .reverse()
-          .map((msg) => (
-            <ChatMessage key={msg.id} message={msg} />
-          ))}
+        {messages.slice().map((msg) => (
+          <ChatMessage key={msg.id} message={msg} />
+        ))}
       </div>
       <div className="mt-auto">
         <ChatInput />
